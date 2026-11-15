@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>المبرمج الحديث | منصة المطورين والأدوات الذكية</title>
+  <style>
+    :root {
+      --bg-color: #0f172a;
+      --surface-color: #1e293b;
+      --surface-hover: #334155;
+      --text-primary: #f8fafc;
+      --text-secondary: #94a3b8;
+      --accent-color: #38bdf8;
+      --accent-glow: rgba(56, 189, 248, 0.25);
+      --border-color: #334155;
+      --code-bg: #020617;
+      --success-color: #10b981;
+    }
+
+    body.light-mode {
+      --bg-color: #f8fafc;
+      --surface-color: #ffffff;
+      --surface-hover: #f1f5f9;
+      --text-primary: #0f172a;
+      --text-secondary: #475569;
+      --accent-color: #0284c7;
+      --accent-glow: rgba(2, 132, 199, 0.15);
+      --border-color: #e2e8f0;
+      --code-bg: #1e293b;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, 'Segoe UI', Tahoma, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-primary);
+      line-height: 1.6;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    /* الشريط العلوي */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: var(--surface-color);
+      border-bottom: 1px solid var(--border-color);
+      padding: 1rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      backdrop-filter: blur(10px);
+    }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--accent-color);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+    }
+
+    .logo span {
+      background: var(--accent-glow);
+      padding: 0.2rem 0.6rem;
+      border-radius: 6px;
+      font-family: monospace;
+      font-size: 1.1rem;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: var(--accent-color);
+    }
+
+    .theme-btn {
+      background: var(--surface-hover);
+      border: 1px solid var(--border-color);
+      color: var(--text-primary);
+      padding: 0.45rem 0.85rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+
+    .theme-btn:hover {
+      border-color: var(--accent-color);
+    }
+
+    /* القسم الترحيبي Hero */
+    .hero {
+      padding: 5rem 5% 4rem;
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--accent-glow);
+      color: var(--accent-color);
+      padding: 0.35rem 1rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+      border: 1px solid var(--accent-color);
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 900;
+      margin-bottom: 1.2rem;
+      line-height: 1.25;
+    }
+
+    .hero h1 span {
+      color: var(--accent-color);
+    }
+
+    .hero p {
+      color: var(--text-secondary);
+      font-size: 1.15rem;
+      max-width: 680px;
+      margin: 0 auto 2rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--accent-color);
+      color: #0f172a;
+      padding: 0.8rem 1.8rem;
+      border-radius: 10px;
+      font-weight: 800;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px var(--accent-glow);
+    }
+
+    .btn-secondary {
+      background: var(--surface-color);
+      color: var(--text-primary);
+      padding: 0.8rem 1.8rem;
+      border-radius: 10px;
+      font-weight: 700;
+      text-decoration: none;
+      border: 1px solid var(--border-color);
+      cursor: pointer;
+      font-size: 1rem;
+      transition: border-color 0.2s;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accent-color);
+    }
+
+    /* قسم المميزات والأقسام */
+    .section {
+      padding: 3.5rem 5%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .section-title {
+      font-size: 1.7rem;
+      font-weight: 800;
+    }
+
+    .filter-tabs {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .tab-btn {
+      background: var(--surface-color);
+      color: var(--text-secondary);
+      border: 1px solid var(--border-color);
+      padding: 0.45rem 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all 0.2s;
+    }
+
+    .tab-btn.active,
+    .tab-btn:hover {
+      background: var(--accent-color);
+      color: #0f172a;
+      border-color: var(--accent-color);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: var(--surface-color);
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      padding: 1.6rem;
+      transition: transform 0.25s, border-color 0.25s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent-color);
+    }
+
+    .card-icon {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      display: inline-block;
+      background: var(--accent-glow);
+      padding: 0.5rem 0.75rem;
+      border-radius: 10px;
+    }
+
+    .card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .card p {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+
+    .card-tag {
+      font-size: 0.8rem;
+      color: var(--accent-color);
+      font-weight: 700;
+    }
+
+    /* محرر الأكواد التفاعلي المباشر */
+    .sandbox {
+      background: var(--surface-color);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 1.8rem;
+      margin-top: 1rem;
+    }
+
+    .sandbox-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 1.2rem;
+    }
+
+    @media (max-width: 768px) {
+      .sandbox-grid {
+        grid-template-columns: 1fr;
+      }
+      nav a {
+        display: none;
+      }
+    }
+
+    .editor-box label {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+
+    textarea {
+      width: 100%;
+      height: 200px;
+      background: var(--code-bg);
+      color: #38bdf8;
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 1rem;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.95rem;
+      direction: ltr;
+      resize: vertical;
+    }
+
+    .console-output {
+      width: 100%;
+      height: 200px;
+      background: var(--code-bg);
+      color: var(--success-color);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 1rem;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.95rem;
+      direction: ltr;
+      overflow-y: auto;
+      white-space: pre-wrap;
+    }
+
+    .sandbox-controls {
+      margin-top: 1rem;
+      display: flex;
+      gap: 0.8rem;
+    }
+
+    /* التذييل */
+    footer {
+      text-align: center;
+      padding: 2.5rem 5%;
+      margin-top: 4rem;
+      border-top: 1px solid var(--border-color);
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+
+    .attribution {
+      margin-top: 0.6rem;
+      font-weight: 700;
+      color: var(--accent-color);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- الشريط العلوي -->
+  <header>
+    <a href="#" class="logo">
+      <span>&lt;/&gt;</span> المبرمج الحديث
+    </a>
+    <nav>
+      <a href="#tracks">المسارات</a>
+      <a href="#sandbox">مختبر الأكواد</a>
+      <button class="theme-btn" id="themeToggle">الوضع النهاري</button>
+    </nav>
+  </header>
+
+  <!-- القسم الرئيسي -->
+  <section class="hero">
+    <div class="badge">منصة تقنية متكاملة • تعمل بدون اتصال</div>
+    <h1>ارتقِ بمهاراتك البرمجية مع <span>المبرمج الحديث</span></h1>
+    <p>
+      مساحتك العملية لتعلم لغات البرمجة الحديثة، بناء تطبيقات الويب التفاعلية، وتجربة الأكواد مباشرة في المتصفح بأداء فائق السرعة.
+    </p>
+    <div class="hero-actions">
+      <a href="#sandbox" class="btn-primary">جرّب مختبر الأكواد الآن</a>
+      <a href="#tracks" class="btn-secondary">استكشف المسارات</a>
+    </div>
+  </section>
+
+  <!-- قسم المسارات والأدوات -->
+  <section class="section" id="tracks">
+    <div class="section-header">
+      <h2 class="section-title">المسارات والأدوات البرمجية</h2>
+      <div class="filter-tabs">
+        <button class="tab-btn active" data-filter="all">الكل</button>
+        <button class="tab-btn" data-filter="web">تطوير الويب</button>
+        <button class="tab-btn" data-filter="scripts">البرمجة والأنظمة</button>
+        <button class="tab-btn" data-filter="3d">التصميم ثلاثي الأبعاد</button>
+      </div>
+    </div>
+
+    <div class="grid" id="cardsGrid">
+      <div class="card" data-category="web">
+        <div class="card-icon">🌐</div>
+        <h3>تطوير الواجهات الحديثة</h3>
+        <p>بناء تطبيقات ويب سريعة ومتجاوبة باستخدام HTML5 و CSS3 و JavaScript مع التخزين المحلي.</p>
+        <span class="card-tag">#Web_Development</span>
+      </div>
+
+      <div class="card" data-category="scripts">
+        <div class="card-icon">🐍</div>
+        <h3>البرمجة بلغة Python و C++</h3>
+        <p>أساسيات الخوارزميات، البرمجة كائنية التوجه (OOP)، وأتمتة المهام بكفاءة عالية.</p>
+        <span class="card-tag">#Algorithms &amp; OOP</span>
+      </div>
+
+      <div class="card" data-category="3d">
+        <div class="card-icon">🧊</div>
+        <h3>الرسوميات والمحاكاة 3D</h3>
+        <p>إنشاء مشاهد تفاعلية ثلاثية الأبعاد في المتصفح باستخدام مكتبة Three.js ومحركات الألعاب.</p>
+        <span class="card-tag">#ThreeJS &amp; 3D</span>
+      </div>
+
+      <div class="card" data-category="scripts">
+        <div class="card-icon">🛡️</div>
+        <h3>أمن المعلومات والشبكات</h3>
+        <p>فهم بروتوكولات الشبكة، فحص المنافذ، وتحليل الحزم البرمجية في بيئات Linux.</p>
+        <span class="card-tag">#Cybersecurity</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- مختبر الأكواد التفاعلي -->
+  <section class="section" id="sandbox">
+    <h2 class="section-title">مختبر JavaScript التفاعلي</h2>
+    <div class="sandbox">
+      <p style="color: var(--text-secondary); font-size: 0.95rem;">
+        اكتب كود JavaScript في المحرر أدناه واضغط على <strong>تشغيل الكود</strong> لمشاهدة النتيجة فوراً:
+      </p>
+      <div class="sandbox-grid">
+        <div class="editor-box">
+          <label for="codeInput">محرر الكود (JavaScript):</label>
+          <textarea id="codeInput">// مرحباً بك في مختبر المبرمج الحديث
+const developer = "معاوية محمد";
+const skills = ["HTML", "CSS", "JavaScript", "Python"];
+
+console.log("أهلاً بك يا " + developer);
+console.log("مهاراتك الحالية:", skills.join(" - "));
+
+for (let i = 1; i <= 3; i++) {
+  console.log(`خطوة برمجية رقم ${i} مكتملة بنجاح!`);
+}</textarea>
+        </div>
+        <div class="editor-box">
+          <label>المخرجات (Console):</label>
+          <div class="console-output" id="consoleOutput">اضغط على "تشغيل الكود" لرؤية النتيجة...</div>
+        </div>
+      </div>
+      <div class="sandbox-controls">
+        <button class="btn-primary" id="runCodeBtn">▶ تشغيل الكود</button>
+        <button class="btn-secondary" id="clearConsoleBtn">مسح المخرجات</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- التذييل -->
+  <footer>
+    <p>جميع الحقوق محفوظة &copy; <span id="year"></span> موقع المبرمج الحديث</p>
+    <p class="attribution">اعمال معاوية محمد</p>
+  </footer>
+
+  <script>
+    // تعيين السنة الحالية تلقائياً
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // نظام تبديل المظهر (ليلي / نهاري) وحفظه في LocalStorage
+    const themeToggle = document.getElementById("themeToggle");
+    const savedTheme = localStorage.getItem("modern_dev_theme");
+
+    if (savedTheme === "light") {
+      document.body.classList.add("light-mode");
+      themeToggle.textContent = "الوضع الليلي";
+    }
+
+    themeToggle.addEventListener("click", () => {
+      document.body.classList.toggle("light-mode");
+      const isLight = document.body.classList.contains("light-mode");
+      themeToggle.textContent = isLight ? "الوضع الليلي" : "الوضع النهاري";
+      localStorage.setItem("modern_dev_theme", isLight ? "light" : "dark");
+    });
+
+    // نظام تصفية البطاقات حسب التخصص
+    const tabButtons = document.querySelectorAll(".tab-btn");
+    const cards = document.querySelectorAll(".card");
+
+    tabButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        tabButtons.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+
+        const filter = btn.getAttribute("data-filter");
+        cards.forEach(card => {
+          if (filter === "all" || card.getAttribute("data-category") === filter) {
+            card.style.display = "block";
+          } else {
+            card.style.display = "none";
+          }
+        });
+      });
+    });
+
+    // تشغيل كود JavaScript داخل المختبر وعرض مخرجات console.log
+    const runCodeBtn = document.getElementById("runCodeBtn");
+    const clearConsoleBtn = document.getElementById("clearConsoleBtn");
+    const codeInput = document.getElementById("codeInput");
+    const consoleOutput = document.getElementById("consoleOutput");
+
+    runCodeBtn.addEventListener("click", () => {
+      consoleOutput.textContent = "";
+      const logs = [];
+      const customConsole = {
+        log: (...args) => {
+          logs.push(args.map(item => typeof item === "object" ? JSON.stringify(item) : String(item)).join(" "));
+        },
+        error: (...args) => {
+          logs.push("[خطأ]: " + args.join(" "));
+        }
+      };
+
+      try {
+        const execute = new Function("console", codeInput.value);
+        execute(customConsole);
+        consoleOutput.style.color = "var(--success-color)";
+        consoleOutput.textContent = logs.length > 0 ? logs.join("\n") : "تم التنفيذ بنجاح (لا توجد مخرجات للطباعة).";
+      } catch (err) {
+        consoleOutput.style.color = "#f87171";
+        consoleOutput.textContent = "خطأ برمجي:\n" + err.message;
+      }
+    });
+
+    clearConsoleBtn.addEventListener("click", () => {
+      consoleOutput.textContent = "";
+    });
+  </script>
+</body>
+</html>
