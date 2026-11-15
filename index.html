@@ -112,7 +112,6 @@
       border-color: var(--accent-color);
     }
 
-    /* الأقسام الرئيسية (Views) */
     .page-section {
       display: none;
     }
@@ -121,9 +120,8 @@
       display: block;
     }
 
-    /* القسم الترحيبي Hero */
     .hero {
-      padding: 5rem 5% 4rem;
+      padding: 4rem 5% 3rem;
       text-align: center;
       max-width: 900px;
       margin: 0 auto;
@@ -159,13 +157,6 @@
       margin: 0 auto 2rem;
     }
 
-    .hero-actions {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
     .btn-primary {
       background: var(--accent-color);
       color: #0f172a;
@@ -184,88 +175,21 @@
       box-shadow: 0 8px 20px var(--accent-glow);
     }
 
-    .btn-secondary {
-      background: var(--surface-color);
-      color: var(--text-primary);
-      padding: 0.8rem 1.8rem;
-      border-radius: 10px;
-      font-weight: 700;
-      text-decoration: none;
-      border: 1px solid var(--border-color);
-      cursor: pointer;
-      font-size: 1rem;
-      transition: border-color 0.2s;
-    }
-
-    .btn-secondary:hover {
-      border-color: var(--accent-color);
-    }
-
-    /* تنسيق العناوين والأقسام العامة */
     .section-container {
-      padding: 3.5rem 5%;
+      padding: 2.5rem 5%;
       max-width: 1200px;
       margin: 0 auto;
-    }
-
-    .section-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1rem;
-      margin-bottom: 2rem;
     }
 
     .section-title {
       font-size: 1.7rem;
       font-weight: 800;
-    }
-
-    .filter-tabs {
-      display: flex;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-    }
-
-    .tab-btn {
-      background: var(--surface-color);
-      color: var(--text-secondary);
-      border: 1px solid var(--border-color);
-      padding: 0.45rem 1rem;
-      border-radius: 8px;
-      cursor: pointer;
-      font-weight: 600;
-      font-size: 0.9rem;
-      transition: all 0.2s;
-    }
-
-    .tab-btn.active,
-    .tab-btn:hover {
-      background: var(--accent-color);
-      color: #0f172a;
-      border-color: var(--accent-color);
-    }
-
-    .search-input {
-      background: var(--surface-color);
-      border: 1px solid var(--border-color);
-      color: var(--text-primary);
-      padding: 0.5rem 1rem;
-      border-radius: 8px;
-      font-size: 0.95rem;
-      outline: none;
-      width: 260px;
-      transition: border-color 0.2s;
-    }
-
-    .search-input:focus {
-      border-color: var(--accent-color);
+      margin-bottom: 1.5rem;
     }
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 1.8rem;
     }
 
@@ -285,36 +209,6 @@
       border-color: var(--accent-color);
     }
 
-    .card-icon {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-      display: inline-block;
-      background: var(--accent-glow);
-      padding: 0.5rem 0.75rem;
-      border-radius: 10px;
-    }
-
-    .card h3 {
-      font-size: 1.2rem;
-      margin-bottom: 0.6rem;
-    }
-
-    .card p {
-      color: var(--text-secondary);
-      font-size: 0.95rem;
-      margin-bottom: 1.2rem;
-    }
-
-    .card-tag, .card-category {
-      font-size: 0.8rem;
-      color: var(--accent-color);
-      font-weight: 700;
-      background: var(--accent-glow);
-      padding: 0.25rem 0.6rem;
-      border-radius: 6px;
-      display: inline-block;
-    }
-
     .card-meta {
       display: flex;
       justify-content: space-between;
@@ -323,8 +217,46 @@
       font-size: 0.85rem;
     }
 
+    .card-category {
+      background: var(--accent-glow);
+      color: var(--accent-color);
+      padding: 0.25rem 0.75rem;
+      border-radius: 6px;
+      font-weight: 700;
+    }
+
     .card-date {
       color: var(--text-secondary);
+    }
+
+    .card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .card p {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--code-bg);
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
     }
 
     .card-footer {
@@ -341,58 +273,14 @@
       text-decoration: none;
       font-weight: 700;
       font-size: 0.95rem;
-      cursor: pointer;
     }
 
-    .like-btn {
-      background: none;
-      border: none;
-      cursor: pointer;
-      color: var(--text-secondary);
-      font-size: 1.1rem;
-      display: flex;
-      align-items: center;
-      gap: 0.3rem;
-    }
-
-    .like-btn.liked {
-      color: var(--heart-color);
-    }
-
-    .card-actions {
-      display: flex;
-      gap: 0.8rem;
-      margin-top: auto;
-    }
-
-    .btn-action {
-      background: var(--surface-hover);
-      color: var(--text-primary);
-      border: 1px solid var(--border-color);
-      padding: 0.5rem 1rem;
-      border-radius: 8px;
-      font-weight: 600;
-      font-size: 0.9rem;
-      cursor: pointer;
-      text-decoration: none;
-      flex: 1;
-      text-align: center;
-      transition: all 0.2s;
-    }
-
-    .btn-action.primary {
-      background: var(--accent-color);
-      color: #0f172a;
-      border-color: var(--accent-color);
-    }
-
-    /* مختبر الأكواد التفاعلي */
+    /* مختبر الأكواد */
     .sandbox {
       background: var(--surface-color);
       border: 1px solid var(--border-color);
       border-radius: 16px;
       padding: 1.8rem;
-      margin-top: 1.5rem;
     }
 
     .sandbox-grid {
@@ -408,50 +296,32 @@
       }
     }
 
-    .editor-box label {
-      display: block;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-      color: var(--text-secondary);
-      font-size: 0.9rem;
-    }
-
-    textarea {
+    textarea.code-area {
       width: 100%;
-      height: 200px;
+      height: 180px;
       background: var(--code-bg);
       color: #38bdf8;
       border: 1px solid var(--border-color);
       border-radius: 10px;
       padding: 1rem;
-      font-family: 'Courier New', Courier, monospace;
-      font-size: 0.95rem;
+      font-family: monospace;
       direction: ltr;
-      resize: vertical;
     }
 
     .console-output {
       width: 100%;
-      height: 200px;
+      height: 180px;
       background: var(--code-bg);
       color: var(--success-color);
       border: 1px solid var(--border-color);
       border-radius: 10px;
       padding: 1rem;
-      font-family: 'Courier New', Courier, monospace;
-      font-size: 0.95rem;
+      font-family: monospace;
       direction: ltr;
       overflow-y: auto;
       white-space: pre-wrap;
     }
 
-    .sandbox-controls {
-      margin-top: 1rem;
-      display: flex;
-      gap: 0.8rem;
-    }
-
-    /* التذييل */
     footer {
       text-align: center;
       padding: 2.5rem 5%;
@@ -483,184 +353,59 @@
     </nav>
   </header>
 
-  <!-- ================= قسم الرئيسية (Home) ================= -->
+  <!-- الرئيسية -->
   <div id="view-home" class="page-section active">
     <section class="hero">
-      <div class="badge">منصة تقنية متكاملة • تعمل بدون اتصال</div>
+      <div class="badge">منصة تقنية متكاملة • عامة للجميع</div>
       <h1>ارتقِ بمهاراتك البرمجية مع <span>المبرمج الحديث</span></h1>
-      <p>
-        مساحتك العملية لتعلم لغات البرمجة الحديثة، بناء تطبيقات الويب التفاعلية، وتجربة الأكواد مباشرة في المتصفح بأداء فائق السرعة.
-      </p>
+      <p>منصتك التقنية الشاملة لتعلم البرمجة وتجربة الأكواد مباشرة.</p>
       <div class="hero-actions">
-        <button class="btn-primary" onclick="switchView('tools')">جرّب الأدوات الآن</button>
-        <button class="btn-secondary" onclick="switchView('lessons')">استكشف الدروس</button>
+        <button class="btn-primary" onclick="switchView('lessons')">تصفح المقالات والدروس</button>
       </div>
     </section>
 
-    <!-- مختبر الأكواد السريع في الرئيسية -->
-    <section class="section-container">
+    <div class="section-container">
       <h2 class="section-title">مختبر JavaScript التفاعلي</h2>
       <div class="sandbox">
-        <p style="color: var(--text-secondary); font-size: 0.95rem;">
-          اكتب كود JavaScript في المحرر أدناه واضغط على <strong>تشغيل الكود</strong> لمشاهدة النتيجة فوراً:
-        </p>
         <div class="sandbox-grid">
-          <div class="editor-box">
-            <label for="codeInput">محرر الكود (JavaScript):</label>
-            <textarea id="codeInput">// مرحباً بك في مختبر المبرمج الحديث
-const developer = "معاوية محمد";
-const skills = ["HTML", "CSS", "JavaScript", "Python"];
-
-console.log("أهلاً بك يا " + developer);
-console.log("مهاراتك الحالية:", skills.join(" - "));
-
-for (let i = 1; i <= 3; i++) {
-  console.log(`خطوة برمجية رقم ${i} مكتملة بنجاح!`);
-}</textarea>
+          <div>
+            <label style="display:block; margin-bottom:0.5rem; font-weight:600; color:var(--text-secondary);">محرر الكود:</label>
+            <textarea class="code-area" id="codeInput">console.log("أهلاً بالجميع في منصة المبرمج الحديث!");</textarea>
           </div>
-          <div class="editor-box">
-            <label>المخرجات (Console):</label>
-            <div class="console-output" id="consoleOutput">اضغط على "تشغيل الكود" لرؤية النتيجة...</div>
+          <div>
+            <label style="display:block; margin-bottom:0.5rem; font-weight:600; color:var(--text-secondary);">المخرجات:</label>
+            <div class="console-output" id="consoleOutput">اضغط تشغيل لرؤية النتيجة...</div>
           </div>
         </div>
-        <div class="sandbox-controls">
+        <div style="margin-top: 1rem;">
           <button class="btn-primary" id="runCodeBtn">▶ تشغيل الكود</button>
-          <button class="btn-secondary" id="clearConsoleBtn">مسح المخرجات</button>
         </div>
       </div>
-    </section>
+    </div>
   </div>
 
-  <!-- ================= قسم الدروس والمقالات (Lessons) ================= -->
+  <!-- الدروس والمقالات (تظهر للجميع تلقائياً) -->
   <div id="view-lessons" class="page-section">
     <div class="hero" style="padding-bottom: 2rem;">
       <h1>الدروس والمقالات <span>التقنية</span></h1>
-      <p>مجموعة مختارة من المقالات والدروس العملية في تطوير الويب، الخوارزميات، والتقنيات الحديثة لمساعدتك في رحلتك البرمجية.</p>
+      <p>محتوى تقعيلي شامل يظهر لجميع الزوار حول العالم.</p>
     </div>
 
     <div class="section-container" style="padding-top: 1rem;">
-      <div class="filter-section" style="padding: 0; margin-bottom: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
-        <div class="filter-tabs" id="lessonTabs">
-          <button class="tab-btn active" data-filter="all">الكل</button>
-          <button class="tab-btn" data-filter="web">تطوير الويب</button>
-          <button class="tab-btn" data-filter="python">بايثون والخوارزميات</button>
-          <button class="tab-btn" data-filter="3d">ثلاثي الأبعاد 3D</button>
-        </div>
-        <input type="text" id="lessonSearch" class="search-input" placeholder="ابحث عن درس أو مقال..." />
-      </div>
-
+      <h2 class="section-title">أحدث المقالات والدروس</h2>
+      
+      <!-- شبكة المقالات العامة -->
       <div class="grid" id="lessonsGrid">
-        <div class="card" data-category="web" data-title="بناء تطبيقات ويب بدون سيرفر باستخدام LocalStorage">
-          <div>
-            <div class="card-meta">
-              <span class="card-category">تطوير الويب</span>
-              <span class="card-date">نوفمبر 2026</span>
-            </div>
-            <h3>بناء تطبيقات ويب بدون سيرفر باستخدام LocalStorage</h3>
-            <p>تعلم كيفية تصميم تطبيقات ويب خفيفة وسريعة تعتمد على التخزين المحلي في المتصفح لضمان استمرارية العمل وحفظ البيانات.</p>
-          </div>
-          <div class="card-footer">
-            <span class="read-btn">قراءة المقال ←</span>
-            <button class="like-btn" onclick="toggleLike(this, 'art_1')">
-              <span>❤️</span> <span class="like-count">12</span>
-            </button>
-          </div>
-        </div>
-
-        <div class="card" data-category="python" data-title="أساسيات البرمجة كائنية التوجه OOP في بايثون">
-          <div>
-            <div class="card-meta">
-              <span class="card-category">بايثون والخوارزميات</span>
-              <span class="card-date">نوفمبر 2026</span>
-            </div>
-            <h3>أساسيات البرمجة كائنية التوجه OOP في بايثون</h3>
-            <p>دليل شامل ومبسط لفهم الفئات والكائنات وكيفية كتابة كود بايثون منظم وقابل لإعادة الاستخدام باحترافية.</p>
-          </div>
-          <div class="card-footer">
-            <span class="read-btn">قراءة المقال ←</span>
-            <button class="like-btn" onclick="toggleLike(this, 'art_2')">
-              <span>❤️</span> <span class="like-count">24</span>
-            </button>
-          </div>
-        </div>
-
-        <div class="card" data-category="3d" data-title="مقدمة في مكتبة Three.js لعرض الرسوميات في المتصفح">
-          <div>
-            <div class="card-meta">
-              <span class="card-category">ثلاثي الأبعاد 3D</span>
-              <span class="card-date">نوفمبر 2026</span>
-            </div>
-            <h3>مقدمة في مكتبة Three.js لعرض الرسوميات في المتصفح</h3>
-            <p>كيف تبدأ خطوتك الأولى في عالم الجرافيكس ثلاثي الأبعاد وعرض النماذج التفاعلية مباشرة باستخدام JavaScript.</p>
-          </div>
-          <div class="card-footer">
-            <span class="read-btn">قراءة المقال ←</span>
-            <button class="like-btn" onclick="toggleLike(this, 'art_3')">
-              <span>❤️</span> <span class="like-count">19</span>
-            </button>
-          </div>
-        </div>
+        <!-- سيتم تحميل المقالات تلقائياً من القائمة أدناه -->
       </div>
     </div>
   </div>
 
-  <!-- ================= قسم الأدوات والمشاريع (Tools) ================= -->
+  <!-- الأدوات والمشاريع -->
   <div id="view-tools" class="page-section">
-    <div class="hero" style="padding-bottom: 2rem;">
+    <div class="hero">
       <h1>الأدوات والمشاريع <span>المصغرة</span></h1>
-      <p>مجموعة من التطبيقات المصغرة والأدوات البرمجية الجاهزة للاستخدام والتي تعمل مباشرة في متصفحك.</p>
-    </div>
-
-    <div class="section-container" style="padding-top: 1rem;">
-      <div style="padding: 0; margin-bottom: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
-        <div class="filter-tabs" id="toolTabs">
-          <button class="tab-btn active" data-filter="all">الكل</button>
-          <button class="tab-btn" data-filter="apps">تطبيقات ويب</button>
-          <button class="tab-btn" data-filter="tools">أدوات مساعدة</button>
-        </div>
-        <input type="text" id="toolSearch" class="search-input" placeholder="ابحث عن أداة أو مشروع..." />
-      </div>
-
-      <div class="grid" id="toolsGrid">
-        <div class="card" data-category="apps" data-title="نظام إدارة سوبر ماركت مصغر">
-          <div>
-            <div class="card-icon">🛒</div>
-            <h3>إدارة سوبر ماركت ومبيعات</h3>
-            <p>تطبيق ويب متكامل لإدارة الأقسام، حساب الأسعار بالوزن، طباعة الفواتير وتتبع الديون والتقارير مع حفظ محلي تام.</p>
-            <span class="card-tag">#Web_App</span>
-          </div>
-          <div class="card-actions" style="margin-top: 1.5rem;">
-            <button class="btn-action primary" onclick="switchView('home')">فتح المختبر</button>
-            <span class="btn-action">جاهز محلياً</span>
-          </div>
-        </div>
-
-        <div class="card" data-category="tools" data-title="مولد الألوان والأكواد السداسية Hex Colors">
-          <div>
-            <div class="card-icon">🎨</div>
-            <h3>مولد الألوان التفاعلي</h3>
-            <p>أداة سريعة لتوليد وتنسيق أكواد الألوان (Hex &amp; RGB) المناسبة لتصاميم واجهات المستخدم وتطوير الويب.</p>
-            <span class="card-tag">#Utility</span>
-          </div>
-          <div class="card-actions" style="margin-top: 1.5rem;">
-            <button class="btn-action primary" onclick="alert('أداة الألوان تعمل بكفاءة داخل المتصفح!')">تشغيل الأداة</button>
-            <span class="btn-action">مفيدة</span>
-          </div>
-        </div>
-
-        <div class="card" data-category="tools" data-title="دفتر الحسابات والماليات الشخصية الذكي">
-          <div>
-            <div class="card-icon">💰</div>
-            <h3>دفتر الحسابات الذكي</h3>
-            <p>أداة لإدارة المصروفات اليومية والإيرادات الشخصية وحساب الأرباح الشهرية مع تصدير البيانات محلياً.</p>
-            <span class="card-tag">#Finance</span>
-          </div>
-          <div class="card-actions" style="margin-top: 1.5rem;">
-            <button class="btn-action primary" onclick="alert('دفتر الحسابات جاهز للاستخدام الفوري!')">فتح الدفتر</button>
-            <span class="btn-action">تخزين محلي</span>
-          </div>
-        </div>
-      </div>
+      <p>تطبيقات ومشاريع مصغرة تعمل بكفاءة عالية في المتصفح.</p>
     </div>
   </div>
 
@@ -671,29 +416,22 @@ for (let i = 1; i <= 3; i++) {
   </footer>
 
   <script>
-    // تعيين السنة الحالية تلقائياً
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // نظام التنقل السلس بين الأقسام (Views) داخل نفس الملف الواحد
     function switchView(viewId) {
       document.querySelectorAll('.page-section').forEach(sec => sec.classList.remove('active'));
       document.querySelectorAll('nav a').forEach(nav => nav.classList.remove('active'));
-      
       document.getElementById('view-' + viewId).classList.add('active');
       const navLink = document.getElementById('nav-' + viewId);
       if (navLink) navLink.classList.add('active');
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    // نظام تبديل المظهر (ليلي / نهاري) وحفظه في LocalStorage
     const themeToggle = document.getElementById("themeToggle");
-    const savedTheme = localStorage.getItem("modern_dev_theme");
-
-    if (savedTheme === "light") {
+    if (localStorage.getItem("modern_dev_theme") === "light") {
       document.body.classList.add("light-mode");
       themeToggle.textContent = "الوضع الليلي";
     }
-
     themeToggle.addEventListener("click", () => {
       document.body.classList.toggle("light-mode");
       const isLight = document.body.classList.contains("light-mode");
@@ -701,134 +439,80 @@ for (let i = 1; i <= 3; i++) {
       localStorage.setItem("modern_dev_theme", isLight ? "light" : "dark");
     });
 
-    // تشغيل كود JavaScript داخل المختبر وعرض مخرجات console.log
-    const runCodeBtn = document.getElementById("runCodeBtn");
-    const clearConsoleBtn = document.getElementById("clearConsoleBtn");
-    const codeInput = document.getElementById("codeInput");
-    const consoleOutput = document.getElementById("consoleOutput");
-
-    if (runCodeBtn) {
-      runCodeBtn.addEventListener("click", () => {
-        consoleOutput.textContent = "";
-        const logs = [];
-        const customConsole = {
-          log: (...args) => {
-            logs.push(args.map(item => typeof item === "object" ? JSON.stringify(item) : String(item)).join(" "));
-          },
-          error: (...args) => {
-            logs.push("[خطأ]: " + args.join(" "));
-          }
-        };
-
-        try {
-          const execute = new Function("console", codeInput.value);
-          execute(customConsole);
-          consoleOutput.style.color = "var(--success-color)";
-          consoleOutput.textContent = logs.length > 0 ? logs.join("\n") : "تم التنفيذ بنجاح (لا توجد مخرجات للطباعة).";
-        } catch (err) {
-          consoleOutput.style.color = "#f87171";
-          consoleOutput.textContent = "خطأ برمجي:\n" + err.message;
-        }
-      });
-
-      clearConsoleBtn.addEventListener("click", () => {
-        consoleOutput.textContent = "";
-      });
-    }
-
-    // نظام التصفية والبحث للدروس
-    const lessonTabs = document.querySelectorAll("#lessonTabs .tab-btn");
-    const lessonCards = document.querySelectorAll("#lessonsGrid .card");
-    const lessonSearch = document.getElementById("lessonSearch");
-
-    lessonTabs.forEach(btn => {
-      btn.addEventListener("click", () => {
-        lessonTabs.forEach(b => b.classList.remove("active"));
-        btn.classList.add("active");
-        filterLessons();
-      });
-    });
-
-    if (lessonSearch) {
-      lessonSearch.addEventListener("input", filterLessons);
-    }
-
-    function filterLessons() {
-      const activeTab = document.querySelector("#lessonTabs .tab-btn.active").getAttribute("data-filter");
-      const query = lessonSearch.value.toLowerCase().trim();
-
-      lessonCards.forEach(card => {
-        const category = card.getAttribute("data-category");
-        const title = card.getAttribute("data-title").toLowerCase();
-        const matchesCategory = (activeTab === "all" || category === activeTab);
-        const matchesSearch = title.includes(query);
-
-        card.style.display = (matchesCategory && matchesSearch) ? "flex" : "none";
-      });
-    }
-
-    // نظام التصفية والبحث للأدوات
-    const toolTabs = document.querySelectorAll("#toolTabs .tab-btn");
-    const toolCards = document.querySelectorAll("#toolsGrid .card");
-    const toolSearch = document.getElementById("toolSearch");
-
-    toolTabs.forEach(btn => {
-      btn.addEventListener("click", () => {
-        toolTabs.forEach(b => b.classList.remove("active"));
-        btn.classList.add("active");
-        filterTools();
-      });
-    });
-
-    if (toolSearch) {
-      toolSearch.addEventListener("input", filterTools);
-    }
-
-    function filterTools() {
-      const activeTab = document.querySelector("#toolTabs .tab-btn.active").getAttribute("data-filter");
-      const query = toolSearch.value.toLowerCase().trim();
-
-      toolCards.forEach(card => {
-        const category = card.getAttribute("data-category");
-        const title = card.getAttribute("data-title").toLowerCase();
-        const matchesCategory = (activeTab === "all" || category === activeTab);
-        const matchesSearch = title.includes(query);
-
-        card.style.display = (matchesCategory && matchesSearch) ? "flex" : "none";
-      });
-    }
-
-    // نظام الإعجاب التفاعلي المحفوظ محلياً
-    function toggleLike(button, articleId) {
-      const countSpan = button.querySelector(".like-count");
-      let count = parseInt(countSpan.textContent);
-      const isLiked = button.classList.contains("liked");
-
-      if (isLiked) {
-        button.classList.remove("liked");
-        count -= 1;
-        localStorage.setItem(`liked_${articleId}`, "false");
-      } else {
-        button.classList.add("liked");
-        count += 1;
-        localStorage.setItem(`liked_${articleId}`, "true");
+    // =========================================================================
+    // 📌 أضف مقالاتك أو فيديوهاتك هنا بكل سهولة (ستظهر للجميع فوراً على الإنترنت)
+    // =========================================================================
+    const myPublicLessons = [
+      {
+        title: "بناء تطبيقات ويب بدون سيرفر باستخدام LocalStorage",
+        category: "تطوير الويب",
+        date: "نوفمبر 2026",
+        content: "تعلم كيفية تصميم تطبيقات ويب خفيفة وسريعة تعتمد على التخزين المحلي في المتصفح لضمان استمرارية العمل وحفظ البيانات.",
+        video: "" // ضع رابط يوتيوب هنا بين الأقواس إن أردت مثل: "https://www.youtube.com/watch?v=XXXXX"
+      },
+      {
+        title: "أساسيات البرمجة كائنية التوجه OOP في بايثون",
+        category: "بايثون والخوارزميات",
+        date: "نوفمبر 2026",
+        content: "دليل شامل ومبسط لفهم الفئات والكائنات وكيفية كتابة كود بايثون منظم وقابل لإعادة الاستخدام باحترافية.",
+        video: ""
       }
-      countSpan.textContent = count;
-      localStorage.setItem(`likes_count_${articleId}`, count);
+    ];
+
+    function renderPublicLessons() {
+      const grid = document.getElementById("lessonsGrid");
+      grid.innerHTML = "";
+
+      myPublicLessons.forEach(item => {
+        let videoEmbed = "";
+        if (item.video) {
+          let videoId = "";
+          if (item.video.includes("youtu.be/")) {
+            videoId = item.video.split("youtu.be/")[1]?.split("?")[0];
+          } else if (item.video.includes("watch?v=")) {
+            videoId = item.video.split("watch?v=")[1]?.split("&")[0];
+          }
+          if (videoId) {
+            videoEmbed = `<div class="video-container"><iframe src="https://www.youtube.com/embed/${videoId}" allowfullscreen></iframe></div>`;
+          }
+        }
+
+        const card = document.createElement("div");
+        card.className = "card";
+        card.innerHTML = `
+          <div>
+            <div class="card-meta">
+              <span class="card-category">${item.category}</span>
+              <span class="card-date">${item.date}</span>
+            </div>
+            <h3>${item.title}</h3>
+            ${videoEmbed}
+            <p>${item.content}</p>
+          </div>
+          <div class="card-footer">
+            <span class="read-btn">موقع المبرمج الحديث</span>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
     }
 
-    document.addEventListener("DOMContentLoaded", () => {
-      lessonCards.forEach((card, index) => {
-        const artId = `art_${index + 1}`;
-        const savedLikeState = localStorage.getItem(`liked_${artId}`);
-        const savedCount = localStorage.getItem(`likes_count_${artId}`);
-        const likeBtn = card.querySelector(".like-btn");
-        if (likeBtn) {
-          const countSpan = likeBtn.querySelector(".like-count");
-          if (savedCount !== null) countSpan.textContent = savedCount;
-          if (savedLikeState === "true") likeBtn.classList.add("liked");
-        }
-      });
+    document.addEventListener("DOMContentLoaded", renderPublicLessons);
+
+    // مختبر الأكواد
+    document.getElementById("runCodeBtn").addEventListener("click", () => {
+      const codeInput = document.getElementById("codeInput").value;
+      const consoleOutput = document.getElementById("consoleOutput");
+      consoleOutput.textContent = "";
+      let logs = [];
+      const customConsole = { log: (...args) => logs.push(args.join(" ")) };
+      try {
+        const execute = new Function("console", codeInput);
+        execute(customConsole);
+        consoleOutput.textContent = logs.length > 0 ? logs.join("\n") : "تم التنفيذ بنجاح.";
+      } catch (err) {
+        consoleOutput.textContent = "خطأ: " + err.message;
+      }
     });
   </script>
 </body>
